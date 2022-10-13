@@ -38,10 +38,22 @@ public class HelloController {
     @FXML
     public void verificacionNombre(Event event) {
         String nombre = txtNombre.getText();
-        if (nombre.length() < 7 && nombre.length()>0) {
-            txtNombre.setStyle("-fx-background-color: #f54242");
-        } else if (nombre.length() > 7 || nombre.length()==0){
-            txtNombre.setStyle("-fx-background-color: #ffffff");
+        if (nombre.length() <= 7 && nombre.length() > 0) {
+            txtNombre.setStyle("-fx-background-color: #f54242; -fx-text-fill: white");
+        } else if (nombre.length() > 7 || nombre.length() == 0){
+            //txtNombre.setStyle("-fx-background-color: #0000000");
+            txtNombre.setStyle("-fx-background-color: white");
+        }
+    }
+
+    @FXML
+    public void verificacionApellido(Event event) {
+        String nombre = txtApellidos.getText();
+        if (nombre.length() <= 10 && nombre.length() > 0) {
+            txtApellidos.setStyle("-fx-background-color: #f54242; -fx-text-fill: white");
+        } else if (nombre.length() > 10 || nombre.length() == 0){
+            //txtApellidos.setStyle("-fx-background-color: #0000000");
+            txtApellidos.setStyle("-fx-background-color: white");
         }
     }
 }
